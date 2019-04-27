@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>VIX vs. News</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Creates the Nav Container -->
+    <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">VIX vs. News</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="regression.html">Regression</a></li>
+                    <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">Clustering</a>
+                            <div class="dropdown-content">
+                              <a href="business_news.html">Clustering Business News</a>
+                              <a href="entrepreneurial_news.html">Clustering Entrepreneurial News</a>
+                              <a href="financial_news.html">Clustering Financial News</a>
+                            </div>
+                          </li>
+                        
+                </ul>
+            </div>
+        </nav>
+
+
+    <!-- Begin page content -->
+    <div class="container-fluid bg-1  col-md-6">
+        <div class="jumbotron">
+            <h2 class="i">Does the news scare investors?</h2>
+            <p class="lead">The Volatility Index (VIX) is known as the FEAR INDEX. It attempts to measure the
+                level of fear and stress in the markets over the next 30 days. Our Goal was to compare VIX data
+                to the sentminet of the new articles and find corrolations.</p>
+            <hr class="my-4">
+            <p>Click below for a real-time prediction of the VIX % change based on levels of fear gathered from the
+                latest news stories.</p>
+            <p class="lead">
+                <button type="button" class="btn btn-success" id="click-me">Predict the VIX</button>
+            </p>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-1  col-md-6">
+        <div class="box">
+            <h2 class="i">Prediction</h2>
+            <p class="lead">Based on sentiment scores and word vectors from the latest New York Times financial and business news stories, this is the expected percentage change to the VIX Index.</p>
+            <hr class="my-4">
+            <div id="table-area" class="">
+                    <table id="predict-table" class="table">
+                      <thead>
+                        <tr>
+                          <th class="table-head">% Change in the VIX</th>
+                          <th class="table-head">Fear Gauge</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+
+
+    <!-- Begin page content -->
+    <div class="container-fluid bg-1  col-md-12">
+        <div id="plot"></div>
+        <script src="../static/js/data.js"></script>
+        <script src="../static/js/plots.js"></script>
+    </div>
+
+
+    <div class="row footer panel-footer">
+        <p> Nichelle, Daniel, Kaushik, and Kristi</p>
+    </div>
+
+
+</body>
+
+<script src="../static/js/app.js" type="text/javascript"></script>
+
+</html>
